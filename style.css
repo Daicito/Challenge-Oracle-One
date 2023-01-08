@@ -1,0 +1,193 @@
+/*fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Inspiration&family=Inter:wght@100;300&family=Yeon+Sung&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300&display=swap');
+* {
+    box-sizing: border-box;
+  }
+@media only screen and (max-width: 600px) {
+body {
+    background-color: #F3F5FC;
+}
+}
+.logo {
+    margin: 10%;
+}
+.contenedorPagina {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-rows: 3fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      ". .";
+    background-color: #F3F5FC;
+    margin: 0;
+}
+.contenedor4partes {
+    display: grid;
+    grid-template-columns: 0.5fr 1.5fr;
+    grid-template-rows: 0.3fr 1.7fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      ". ."
+      ". .";
+}
+.textoIngresa {
+    width: 577px;
+    height: auto;
+    left: 240px;
+    top: 168px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 150%;
+    border: none;
+    resize: none;
+    border-radius: 2%;
+    color: #0A3871;
+  }
+.textoIngresa::placeholder {
+    text-align: center;
+    color: #0a3871a8;
+}
+.textoInformacion {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 150%;
+    color: #495057;
+    opacity: 0.8;
+}
+.textoNoEncontrado {
+    width: 336px;
+    height: 58px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 120%;
+    text-align: center;
+    color: #343A40;
+}
+.contenedor3lineas {
+    display: grid;
+    grid-template-columns: 1.1fr;
+    grid-template-rows: 2.7fr 0.5fr 1.2fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "."
+      "."
+      ".";
+}
+.botones {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 24px;
+}
+.boton {
+    padding: 24px;
+    width: 280px;
+    height: 67px;
+    border-radius: 24px;
+    border-color: #0A3871;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    cursor: pointer;
+}
+.encriptarBoton {
+    background: #0A3871;
+    color: #FFFFFF;
+}
+.desencriptarBoton {
+    background: #D8DFE8;
+    color: #0A3871;
+}
+.copiarBoton {
+    background-color: #e2e7f8;
+    color: #0A3871;
+    display: none;
+    padding: 1.5rem;
+    gap: 0.5rem;
+    width: 21rem;
+    height: 4rem;
+}
+.contenedorSalida {
+    width: 400px;
+    height: 744px;
+    background: #FFFFFF;
+    box-shadow: 0px 24px 32px -8px rgba(0, 0, 0, 0.08);
+    border-radius: 32px;
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    margin: 15px;
+}
+.textoSalida {
+    width: 336px;
+    height: 100%;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    margin:auto;  
+    border: none;
+    resize: none;
+    border-radius: 2%;
+    color: #0A3871;
+}
+.link {
+    color: #0A3871;
+    text-decoration: none;
+    margin: 1%;
+}
+footer {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    background-color: #e2e7f8;
+    color: #0A3871;
+    text-align: center;
+    font-family: Inspiration;
+}
+
+.tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    top: 150%;
+    left: 50%;
+    margin-left: -60px;
+  }
+  
+.tooltiptext::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent black transparent;
+  }
+
+.tooltiptext:hover .tooltiptext {
+    visibility: visible;
+  }

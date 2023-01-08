@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang = "en">
+<head>
+     <meta charset = "UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <title> Codificador </title>
+     <link rel="stylesheet" href="style.css">
+     <script src="https://kit.fontawesome.com/57b4ed96ef.js" crossorigin="anonymous"></script>
+</head>
+<body style="margin: 0;">
+     <div class="contenedorPagina">
+          <div class="contenedor4partes">
+               <!--LOGO-->
+               <header>
+                    <img class="logo" src="img/Vector.png">
+               </header>
+
+               <div></div>
+               <div></div>
+
+               <div class="contenedor3partes">
+                    <!--TEXTO 1-->
+                    <textarea id="mensaje" class="textoIngresa" placeholder="ingrese el texto aqui" rows="10" maxlength="225"></textarea>
+                    <!--BOTONES-->
+                    <p class="textoInformacion">
+                         <img src="img/Simbolo.png" width="12px" height="12px">
+                         Solo letras minúsculas y sin acentos
+                    </p>
+                    <div class="botones">
+                         <button onclick="encriptar()" class="boton encriptarBoton">Encriptar</button>
+                         <button onclick="desencriptar()" class="boton desencriptarBoton">Desencriptar</button>
+                    </div>
+               </div>
+          </div>
+          <!--TEXTO 2-->
+          <div class="contenedorSalida">
+               <div>
+                    <img id="muñeco" src="img/Muñeco.png">
+                    
+                    <p id="textoNoEncontrado" class="textoNoEncontrado">Ningún mensaje fue encontrado</p>
+                    <textarea id="salida" class="textoSalida" disabled="true" rows="10" placeholder="Ingresa el texto que desees encriptar o desencriptar."></textarea>
+                    <button id="copiar" onclick="copiar()" class="boton copiarBoton centrado">Copiar</button>
+               </div>
+          </div>
+     </div>
+
+<script>
+     function encriptar() {
+          var minisculas = /^[a-zñ\s]+$/g;
+          var texto = document.getElementById("mensaje").value.toLowerCase();
+          if (texto === "") {
+               document.getElementById("muñeco").style.display = "block";
+               document.getElementById("textoNoEncontrado").style.display = "block";
+               document.getElementById("salida").innerHTML = "";
+               document.getElementById("copiar").style.display = "none";
+          } else if (texto.match(minisculas) !== null) {
+               document.getElementById("muñeco").style.display = "none";
+               document.getElementById("textoNoEncontrado").style.display = "none";
+               document.getElementById("copiar").style.display = "inherit";
+               document.getElementById("copiar").style.justifyContent = "center"
+               var txtcifrado = texto.replace(/e/igm,"enter");
+               var txtcifrado = txtcifrado.replace(/o/igm,"ober");
+               var txtcifrado = txtcifrado.replace(/i/igm,"imes");
+               var txtcifrado = txtcifrado.replace(/a/igm,"ai");
+               var txtcifrado = txtcifrado.replace(/u/igm,"ufat");
+               document.getElementById("salida").innerHTML = txtcifrado;
+               document.getElementById("mensaje").value = "";
+          } else {
+               alert("Texto ingresado no admitido");
+          }
+     }
+     function desencriptar() {
+          var minisculas = /^[a-zñ\s]+$/g;
+          var texto = document.getElementById("mensaje").value.toLowerCase();
+          if (texto === "") {
+               document.getElementById("muñeco").style.display = "block";
+               document.getElementById("textoNoEncontrado").style.display = "block";
+               document.getElementById("salida").innerHTML = "";
+               document.getElementById("copiar").style.display = "none";
+          } else if(texto.match(minisculas) !== null) {
+               document.getElementById("muñeco").style.display = "none";
+               document.getElementById("textoNoEncontrado").style.display = "none";
+               document.getElementById("copiar").style.display = "inherit";
+               document.getElementById("copiar").style.justifyContent = "center"
+               var txtcifrado = texto.replace(/enter/igm,"e");
+               var txtcifrado = txtcifrado.replace(/ober/igm,"o");
+               var txtcifrado = txtcifrado.replace(/imes/igm,"i");
+               var txtcifrado = txtcifrado.replace(/ai/igm,"a");
+               var txtcifrado = txtcifrado.replace(/ufat/igm,"u");
+               document.getElementById("salida").innerHTML = txtcifrado;
+               document.getElementById("mensaje").value = "";
+          } else {
+               alert("Texto ingresado no admitido");
+          }
+     }
+     function copiar() {
+          var copiado = document.getElementById("salida");
+          copiado.select();
+          copiado.setSelectionRange(0, 99999);
+          navigator.clipboard.writeText(copiado.value);
+          alert("Texto copiado: " + copiado.value);
+     }
+
+</script>
+</body>
+<footer>
+     <h2>Desarrollado por Dairon Montes</h2>
+     <a class="link" href="https://github.com/Daicito">Github:<i class="fa-brands fa-github" style="cursor: pointer;"></i><span></span></a>
+     <a class="link" href="https://www.linkedin.com/in/dairon-alberto-montes-barrada-2aa44b192/">Linkedin:<i class="fa-brands fa-linkedin" style="cursor: pointer;"></i><span></span></a>
+</footer>
+</html>
